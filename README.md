@@ -1,0 +1,1 @@
+A pokedex application using react, typescript, webpack and tailwind.css.
