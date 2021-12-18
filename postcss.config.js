@@ -3,5 +3,5 @@ const autoprefixer = require('autoprefixer');
 const postcss = require('postcss-import');
 
 module.exports = {
-  plugins: [postcss, tailwindcss('./tailwind.config.js'), autoprefixer]
+  plugins: ["postcss-preset-env", tailwindcss('./tailwind.config.js'), autoprefixer]
 };
