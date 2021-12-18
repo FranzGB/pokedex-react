@@ -1,5 +1,6 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 
 const config = {
@@ -11,12 +12,13 @@ const config = {
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx",".css"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
+        include: resolve(__dirname,"src"),
         use: [
           'style-loader',
           {
@@ -25,7 +27,7 @@ const config = {
               importLoaders: 1
             }
           },
-          'postcss-loader'
+          'postcss-loader',
         ]
       }
     ,
@@ -37,6 +39,9 @@ const config = {
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{from: "src/index.html", to: "index.html" }]
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",

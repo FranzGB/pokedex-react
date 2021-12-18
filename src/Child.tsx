@@ -6,9 +6,9 @@ interface IChildProps {
 const Child:React.FC<IChildProps> = (props) =>{
     return (
         <div>
-            <h2>Test {props.name}</h2>
-            <ul>
-                {props.data.map((value,idx)=> <li key={idx}>{value}</li>)}
+            <h2 className={"bg-red-900"}>Test {props.name}</h2>
+            <ul className={"list-inside list-disc"}>
+                {props.data.map((value,idx)=> <li className={"hover:text-white"} key={idx}>{value}</li>)}
             </ul>
         </div>
     );
