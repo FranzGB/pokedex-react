@@ -14,6 +14,11 @@
   "license": "MIT",
   "dependencies": {
     "copy-webpack-plugin": "^6.4.1",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "postcss-loader": "^4.3.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
