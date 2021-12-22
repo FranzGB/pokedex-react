@@ -8,7 +8,7 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         "light-grey": "#E5EEE5",
-        purple: "#7652C6"
+        pokered: "#E44231"
       }
     },
   },
