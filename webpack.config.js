@@ -39,7 +39,7 @@ const config = {
     ,
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
-        use: ['file-loader'],
+        loader: 'file-loader',
         options: {
           name: '/public/icons/[name].[ext]'
         }
