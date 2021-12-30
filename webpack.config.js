@@ -36,6 +36,14 @@ const config = {
         use: "babel-loader",
         exclude: /node_modules/,
       }
+    ,
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/public/icons/[name].[ext]'
+        }
+      }
     ],
   },
   plugins: [
