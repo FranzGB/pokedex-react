@@ -6,25 +6,28 @@ import Home from "./Home";
 import About from "./About";
 import AdvancedSearch from "./AdvancedSearch";
 import "./styles/styles.css";
-
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 const rootElement = document.getElementById("index");
+const queryClient = new QueryClient();
 render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App  />}>
-                <Route path="/home" element={<Home />} />
-                <Route path="about" element={<About />} />
-                <Route path="advanced-search" element={<AdvancedSearch />} />
-                <Route
-                path="*"
-                element={
-                    <main style={{ padding: "1rem" }}>
-                    <p>There's nothing here!</p>
-                    </main>
-                }
-                />
-            </Route>
-        </Routes>
-    </BrowserRouter>,
+    <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App  />}>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="advanced-search" element={<AdvancedSearch />} />
+                    <Route
+                    path="*"
+                    element={
+                        <main style={{ padding: "1rem" }}>
+                        <p>There's nothing here!</p>
+                        </main>
+                    }
+                    />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    </QueryClientProvider>,
     rootElement
     );
