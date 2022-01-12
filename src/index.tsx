@@ -5,8 +5,10 @@ import App from "./App";
 import Home from "./Home";
 import About from "./About";
 import AdvancedSearch from "./AdvancedSearch";
+import PokemonInfo from "./PokemonInfo";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "./styles/styles.css";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
 const rootElement = document.getElementById("index");
 const queryClient = new QueryClient();
 render(
@@ -15,8 +17,9 @@ render(
             <Routes>
                 <Route path="/" element={<App  />}>
                     <Route path="/home" element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="advanced-search" element={<AdvancedSearch />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/advanced-search" element={<AdvancedSearch />} />
+                    <Route path="/pokemon/:pokemonId" element={<PokemonInfo  />} />
                     <Route
                     path="*"
                     element={
