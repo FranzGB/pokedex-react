@@ -55,6 +55,7 @@ const config = {
       filename: "index.html",
       inject: "body",
     }),
+    
   ],
   devServer: {
     contentBase: resolve(__dirname,'dist'),
